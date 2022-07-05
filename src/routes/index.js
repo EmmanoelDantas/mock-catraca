@@ -1,9 +1,12 @@
 const express = require('express');
-const { loginController, logsGenerator} = require("../controllers");
+const { loginController} = require("../controllers/login/loginController");
+const { activeMonitor } = require('../controllers/monitor/activeMonitor');
+const { changeEndpoint } = require('../controllers/monitor/changeEndpoint');
 
 const router = express.Router();
 
 router.post("/login.fcgi", loginController);
-router.post("/load_objects.fcgi", logsGenerator)
+router.post("/set_configuration.fcgi", activeMonitor);
+router.post("/set_configuration.fcgi", changeEndpoint);
 
 module.exports = router;
