@@ -1,12 +1,12 @@
 
 const dao = (req, res) => {
-    data = {
+    body = {
         object_changes: [
           {
             object: "access_logs",
             type: "inserted",
             values: {
-              id: "519",
+              id: "518",
               time: "1532977090",
               event: "12",
               device_id: "478435",
@@ -21,8 +21,9 @@ const dao = (req, res) => {
         ],
         device_id: 478435
       }
-
-    res.status(200).json({data});
+    
+    console.log(body)
+    res.status(200).json({body});
 }
 
 module.exports = {dao}
